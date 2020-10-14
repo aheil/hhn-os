@@ -1,3 +1,5 @@
+![Publish](https://github.com/aheil/hhn-os/workflows/Publish/badge.svg?branch=main)
+
 # Operating Systems
 
 This course is being taught as a part of the Bachelor Software Engineering at Heilbronn University fpr Applied Sciences in Germany. 
