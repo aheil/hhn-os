@@ -25,7 +25,7 @@ v1.0.0
 
 # Motivation
 
-![w:640 bg](..\img\os.01.peach.png)
+![w:640 bg](../img/os.01.peach.png)
 
 ---
 
@@ -34,7 +34,7 @@ v1.0.0
 **»Vereinfachte Definition«: Prozess** 
 Ein ausgeführtes bzw. laufendes Programm
 
-![w:600 bg right](..\img\os.01.taskmng1.png)
+![w:600 bg right](../img/os.01.taskmng1.png)
 
 ---
 
@@ -58,13 +58,13 @@ Ein ausgeführtes bzw. laufendes Programm
 
 Beispiel rechts: Windows Task Manager mit 262 Prozesse 
 
-![w:600 bg right](..\img\os.01.taskmng2.png)
+![w:600 bg right](../img/os.01.taskmng2.png)
 
 ---
 
 # Beispiel: Linux *top*
 
-![](..\img\os.01.top.png)
+![](../img/os.01.top.png)
 
 ---
 
@@ -155,7 +155,7 @@ Um dieses sog. »Lazy Loading« zu verstehen, werden wir uns später noch mit »
     * In C für dynamischen Speicherzuordnung via `malloc()` und `free()`
     * Exkurs: Memoryleaks baut man übrigens, indem man in C vergisst `free()` aufzurufen
 
-    ![w:480 bg right](..\img\os.01.processcreation.png)
+    ![w:480 bg right](../img/os.01.processcreation.png)
 
 ---
 
@@ -184,7 +184,7 @@ Was bedeuten eigentlich die Status...?
 
 # Mögliche Statusübergänge
 
- ![w:500 bg right](..\img\os.01.status.png)
+ ![w:500 bg right](../img/os.01.status.png)
 
 ---
 
@@ -208,7 +208,7 @@ Bevor wir uns den Scheduler anschauen, müssen wir uns allerdings noch ein paar 
 
 ---
 
-# Ein paar Gedanken zu Prozesse 
+# Ein paar Gedanken zu Prozessen 
 
 Wir benötigen
 * Eine Datenstruktur für Prozesse 
@@ -227,7 +227,7 @@ In UNIX-Systemen haben solche Prozesse einen eigenen Status: **Zombie**
 Alle Informationen über einen Prozess stehen in eeinem Prozesskontrollblock (engl. process control bblock, kurz PCB) 
 
 
- ![w:640 bg right](..\img\os.01.pcb.png)
+ ![w:640 bg right](../img/os.01.pcb.png)
 
 ---
 
