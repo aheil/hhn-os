@@ -12,47 +12,47 @@ Prof. Dr.-Ing. Andreas Heil
 
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
-v1.0.0
+v1.0.1
 
 ---
 
 # Lernziele und Kompetenzen
 
-* **Verstehen** wie Prozesse im Betriebssystem gesteuert werden.
-* **Verstehen** welche Probleme bei der direkten Ausführung von Prozessen auf der CPU entstehen und wie dem im Betriebssystem begegnet wird.
+* **Verstehen** wie Prozesse im Betriebssystem gesteuert werden
+* **Verstehen** welche Probleme bei der direkten Ausführung von Prozessen auf der CPU entstehen und wie dem im Betriebssystem begegnet wird
 
 ---
 
 # Problem
 
-Bisher haben wir gelernt, dass es Prozesse gibt, diese in irgendwelchen Listen stehen und Prozesse gelanden werden können.
+Bisher haben wir gelernt, dass es Prozesse gibt, diese irgendwie gestartet werden können.
 
 Das Betriebssystem lädt also ein Programm, lädt alle Register und startet den Prozess... 
 
 * **Frage 1:** Wie stellen wir sicher, dass der Prozess nichts »Verbotenes« tut?
 
-* **Frage 2:** Die direkte Ausführung des Prozesses auf der CPU (engl. direct execution) ist zwar schnell, aber was passiert nun, wenn der Prozess eingeschränkte Aktionen durchführen will (z.B. mehr Speicher, I/O-Operation auf Disk etc.)?
+* **Frage 2:** Die direkte Ausführung des Prozesses auf der CPU (engl. direct execution) ist zwar schnell, aber was passiert nun, wenn der Prozess eingeschränkte Aktionen durchführen will (z.B. mehr Speicher, I/O-Operation etc.)?
 
-* **Frage 3:** Und wie stellen wir überhaupt sicher, dass der Prozess die Kontrolle wieder abgiebt? Solange der Prozess ausgeführt wird, wird ja nicht das Betriebssystem ausgeführt... 🤔
+* **Frage 3:** Und wie stellen wir überhaupt sicher, dass der Prozess die Kontrolle wieder abgibt? Solange der Prozess ausgeführt wird, hat das Betriebssystem ja keine Kontrolle über die CPU... 🤔
 
 ---
 
 # Lösungsidee
 
-Programme laufen im sog. **»User Mode Linux«** oder allgemein »«User Mode« 
+Programme laufen im sog. **»User Mode Linux«** oder allgemein **»User Mode«**. 
 
 * Es wird eingeschränkt, was das Programm »tun« kann
-* Z.B. werden I/O Operationen eingeschränkt
-* Wenn doch, wird eine »Exception« im Prozessor erzeugt (das heißt tatsächlich so, hat aber nichts mit Java Exceptions zu tun)
+* Z.b. werden I/O-Operationen eingeschränkt
+* Wenn ein Programm versucht etwas dunerlaubtes auszuführen wird eine »Exception« im Prozessor erzeugt (das heißt tatsächlich so, hat aber nichts z.B. mit Java Exceptions zu tun)
 
-Der Gegensazu: **»Kernel Mode«**
+Der Gegensatz: **»Kernel Mode«**
 * Hier sind alle Operationen, auch bzw. insbesondere I/O-Operationen erlaubt
 
 --- 
 
 # System Call 
 
-Wenn ein Programm im *User Mode* etwas machen möchte, das eigentlich nicht darf, führt es einen sog »System Call« oder kurz »Syscall« aus.
+Wenn ein Programm im *User Mode* etwas ausführen möchte, das eigentlich untersagt ist, führt es einen sog. »System Call« oder kurz »Syscall« aus.
 * System Calls werden von allen modernen Betriebssystemen angeboten
 * POSIX-Systeme (Portable Operating System Interface[^1]) bieten mehrere hundert solcher System Calls an 
 
@@ -60,8 +60,9 @@ Wenn ein Programm im *User Mode* etwas machen möchte, das eigentlich nicht darf
 
 # System Call Ablauf
 
-* Das Programm führt ein sog. Trap-Instruktion aus
-* Springt in Kernel, und startet im privilegierten Modus (Kernel Modus)
+Das Programm... 
+* Führt ein sog. Trap-Instruktion aus
+* Springt in Kernel und startet im privilegierten Modus (Kernel Modus)
 * Führt die Operationen aus, die im »System Call Handler« hinterlegt sind
 * Führt eine sog. Return-From-Trap-Instruktion aus
 * Kehrt in den User Mode zurück
@@ -112,7 +113,7 @@ Nur mal so... Was könnte man denn machen, wenn man eine eigene Trap Table insta
 * Prozesse weden im User Mode ausgeführt und sind eingeschränkt was bestimmte Aktionen aneht 
 * Mittels System Calls kann ein Prozess spezielle Aktionen ausführen (lassen), die jedoch vom Betriebssystem kontrolliert werden
 * Eine Trap Table enthält die Information darüber, wo der Code steht, der durch ein System Call ausgeführt wird 
-* Trap Tables werden zur Bootzeitr (im Kernel Modus) erzeugt
+* Trap Tables werden zur Bootzeit (im Kernel Modus) erzeugt
 
 [^1]: https://standards.ieee.org/project/1003_1.html#Standard
 

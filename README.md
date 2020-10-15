@@ -8,6 +8,9 @@ This course is being taught as a part of the Bachelor Software Engineering at He
 
 ## Lecture Slides 
 
+* 🇩🇪 [Prozesse und Prozess-API](slides/os.01.de.pdf)
+* 🇩🇪 [Direct Excution](slides/os.02.de.pdf) 
+
 ## Lab and Home Assignments 
 
 ## License
