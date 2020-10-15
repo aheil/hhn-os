@@ -12,7 +12,7 @@ Prof. Dr.-Ing. Andreas Heil
 
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
-v1.0.1
+v1.0.2
 
 ---
 
@@ -113,7 +113,7 @@ Nur mal so... Was könnte man denn machen, wenn man eine eigene Trap Table insta
 * Prozesse weden im User Mode ausgeführt und sind eingeschränkt was bestimmte Aktionen aneht 
 * Mittels System Calls kann ein Prozess spezielle Aktionen ausführen (lassen), die jedoch vom Betriebssystem kontrolliert werden
 * Eine Trap Table enthält die Information darüber, wo der Code steht, der durch ein System Call ausgeführt wird 
-* Trap Tables werden zur Bootzeit (im Kernel Modus) erzeugt
+* Trap Tables werden zur Boot-Zeit (im Kernel Modus) erzeugt
 
 [^1]: https://standards.ieee.org/project/1003_1.html#Standard
 
