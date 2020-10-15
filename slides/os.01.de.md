@@ -2,7 +2,7 @@
 marp: true
 theme: defalut
 paginate: true
-footer: 
+footer:
 
 ---
 
@@ -12,14 +12,14 @@ Prof. Dr.-Ing. Andreas Heil
 
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
-v1.0.0
+v1.0.1
 
 ---
 
 # Lernziele und Kompetenzen
 
-* **Verstehen** wie sich Prozesse zusammensetzen und Prozesse vom * Betriebssystem verwaltet werden.
-* **Verstehen** wie Prozesse im Betriebssystem gesteuert werden.
+* **Verstehen** wie sich Prozesse zusammensetzen und Prozesse vom Betriebssystem verwaltet werden.
+* **Verstehen** wie Prozesse im Betriebssystem gesteuert werden
 
 ---
 
@@ -78,10 +78,10 @@ Beispiel rechts: Windows Task Manager mit 262 Prozesse
 
 ---
 
-# Was wird für Vortialisierung benötigt?
+# Was wird für Virtualisierung benötigt?
 
 * »Low Level Machinery« 
-* Methoden und Protokolle für die grundlegende Funktionalität 
+    * Methoden und Protokolle für die grundlegende Funktionalität 
 
 * »High Level Intelligence«
     * Irgendetwas Geschicktes zum Stoppen und Starten von Programmen 
@@ -93,9 +93,9 @@ Beispiel rechts: Windows Task Manager mit 262 Prozesse
 
 # Abstraktion von Prozessen
 
-Prozesse bestehen aus grundlegend aus
-* Speicher in dem die Programmanweisungen bzw. Instruktionen (engl. instructions) liegen
-* Speicher in dem die Daten geschrieben werden 
+Prozesse bestehen grundlegend aus
+* Speicher, in dem die Programmanweisungen bzw. Instruktionen (engl. instructions) liegen
+* Speicher, in dem die Daten geschrieben werden 
 * Vom Prozess adressierbarer Speicher (engl. address space)
 * Registern - Instruktionen lesen und schreiben in Register, dies ist notwendig für die Ausführung d. Prozesses
 
@@ -108,23 +108,23 @@ Prozesse bestehen aus grundlegend aus
 * Program Counter (Abk. PC) oder auch Instruction Counter (Abk. IC)
     * Hier steht die nächste Anweisung, die ausgeführt werden soll
 
-* Stack Pointer, Frame Pointer, Funktionsparameter, lokale Variablen und Rücksprungadressen (engl. return address) - mehr daz uspäter
+* Stack Pointer, Frame Pointer, Funktionsparameter, lokale Variablen und Rücksprungadressen (engl. return address) - mehr dazu später
 
 * Register für I/O-Informationen
     * Liste der Dateien, die der Prozess aktuell geöffnet hat  
 
 ---
 
-# Prozess API 
+# Prozess-API 
 
-Außerdem benötigen wir eine Programmierschnittstelle (engl. process API), die jedes Betriebssystem beinhalten muss (wird später noch weiter vertieft)
+Außerdem benötigen wir eine Programmierschnittstelle (engl. process api), die jedes Betriebssystem beinhalten muss (wird später noch weiter vertieft)
 
 * `create`: Ausgewähltes Programm wird gestartet und ein neuer Prozess erzeugt 
 * `destroy`: Falls sich ein Programm nicht von selbst beendet, ist dies sehr hilfreich
-* `wait`: Grundsätzlich sinnvoll zu warten, bis ein Prozess von selbst aufhört zu laufen
+* `wait`: Durchaus sinnvoll zu warten, bis ein Prozess von selbst aufhört zu laufen
 * `status`: Statusinformation von Prozessen abfragen 
 
-    Weitere Möglichkeiten sind je nach OS unterschiedlich, z.B.:
+    Weitere Möglichkeiten sind je nach Betriebssystem unterschiedlich, z.B.:
 `suspend` und `resume` um Prozesse anzuhalten und weiterlaufen zu lassen
 
 ---
@@ -132,19 +132,20 @@ Außerdem benötigen wir eine Programmierschnittstelle (engl. process API), die 
 # Wie wird ein Prozess erzeugt?
 
 1. Voraussetzung: Ein Programm muss in ausführbarer Form vorliegen (mehr dazu später)
-2. Programm und statische Daten werden in den Adressraum des Programms geladen
+2. Programm und statische Daten werden in den Adressraum des Prozesses geladen
     * »Früher« wurde das gesamte Programm in den Speicher geladen (engl. eagerly)
-    * »Heute« wird nur der benötigte Programm-Code und die erforderlichen Daten geladen (engl. lazy)
-Um dieses sog. »Lazy Loading« zu verstehen, werden wir uns später noch mit »Paging« und »Swapping« befassen 
+    * »Heute« wird nur der benötigte Programm-Code und die erforderlichen Daten geladen (engl. lazy)  
+
+        Um dieses sog. »Lazy Loading« zu verstehen, werden wir uns später noch mit »Paging« und »Swapping« befassen müssen
 
 ---
 
 # Wie wird ein Prozess erzeugt? (Forts.)
 
 3. Der sog. »Stack« bzw. »Runtime Stack« wird zugewiesen
-    * C nutzt den Stack für lokale Variablen, Funktionsparameter und Rücksprung-Adressen
+    * C nutzt den Stack für lokale Variablen, Funktionsparameter und Rücksprungadressen
 4. Das Betriebssystem füllt z.B. die Parameterlisten
-    * Bei C `argc` und `argv`, dass das Programm (hier die `main`-Funktion) auf die Werte zugreifen kann
+    * Bei C sind dies `argc` und `argv`, so dass das Programm (hier die `main`-Funktion) auf die Werte zugreifen kann[^4]
     * Kennen Sie auch aus Java
 
 ---
@@ -191,8 +192,8 @@ Was bedeuten eigentlich die Status...?
 # Prozessstatus 
 
 * **Running:** Prozess läuft auf einer CPU 
-* **Ready:** Programm könnte laufen, aber das OS hat entschieden, den Prozess noch nicht laufen zu lassen
-* **Blocked:** Prozess hat eine Aktion ausgeführt, die erst abgeschlossen werden kann, wenn ein anderes Ereignis stattgefunden hat. Typischerweise handelt es sich hierbei um eine I/O-Operation
+* **Ready:** Prozess könnte laufen, aber das OS hat entschieden, den Prozess noch nicht laufen zu lassen
+* **Blocked:** Prozess hat eine Aktion ausgeführt, die erst abgeschlossen werden kann, wenn ein anderes Ereignis stattgefunden hat - typischerweise handelt es sich hierbei um eine I/O-Operation
 
     Ist ein Prozess geblockt, wartet das Betriebssystem auf die I/O-Operation, um dann den Prozess wieder in den Status *Ready* zu verschieben. 
 
@@ -214,7 +215,7 @@ Wir benötigen
 * Eine Datenstruktur für Prozesse 
 * Eine Liste aller Prozesse
 * Eine Liste aller blockierten Prozesse
-* Eine Möglichkeit Register bei Stoppen wegzuspeichern und beim Anlauen des Prozesses wieder zu laden (engl. context switch)
+* Eine Möglichkeit Register bei Stoppen wegzuspeichern und beim Anlaufen des Prozesses wieder zu laden (engl. context switch)
 
 Und was passiert eigentlich, wenn ein Prozess beendet ist, aber noch nicht alles »aufgeräumt« wurde? 
 
@@ -224,7 +225,7 @@ In UNIX-Systemen haben solche Prozesse einen eigenen Status: **Zombie**
 
 # Exkurs: Datenstruktur von xv6-Prozessen
 
-Alle Informationen über einen Prozess stehen in eeinem Prozesskontrollblock (engl. process control bblock, kurz PCB) 
+Alle Informationen über einen Prozess stehen in einem Prozesskontrollblock (engl. process control block, kurz PCB) 
 
 
  ![w:640 bg right](../img/os.01.pcb.png)
@@ -234,11 +235,12 @@ Alle Informationen über einen Prozess stehen in eeinem Prozesskontrollblock (en
 # Zusammenfassung
 
 * Prozesse sind die grundlegende Abstraktion eines Programmes
-* Zu jedem Zeitpunkt kann ein Prozess über seinen Status, den Speicherinhalt seinen Adressraums, den Inhalt der CPU-Register (einschl. program counter und stack pointer) und den I/O-Informationen (d.h. geöffnete Dateien) beschrieben werden
-* Die Prozess-API besteh aus Aufrufen, die in Zusammenhang mit Prozessen ausgeführt werden können, z.B. zum Erzeugen oder Beenden von Prozessen
+* Zu jedem Zeitpunkt kann ein Prozess über seinen Status, den Speicherinhalt, seinen Adressraums, den Inhalt der CPU-Register (einschl. program counter und stack pointer) und den I/O-Informationen (d.h. geöffnete Dateien) beschrieben werden
+* Die Prozess-API besteht aus Aufrufen, die in Zusammenhang mit Prozessen ausgeführt werden können, z.B. zum Erzeugen oder Beenden von Prozessen
 * Unterschiedliche Ereignisse führen zu Statusänderungen im Prozess (z.B. der Aufruf einer blockierenden I/O-Operation)
 * Eine Prozessliste enthält alle Informationen über die Prozesse auf einem System
 
 [^1]: https://sites.ualberta.ca/dept/chemeng/AIX-43/share/man/info/C/a_doc_lib/aixuser/usrosdev/std_input_output.htm
 [^2]: https://man7.org/linux/man-pages/man1/top.1.html
 [^3]: https://github.com/mit-pdos/xv6-public/blob/master/proc.h
+[^4]: https://github.com/aheil/hhn-c#funktionen
