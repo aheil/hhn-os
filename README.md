@@ -11,6 +11,7 @@ This course is being taught as a part of the Bachelor Software Engineering at He
 * 🇩🇪 [Prozesse und Prozess-API](slides/os.01.de.pdf)
 * 🇩🇪 [Direct Excution](slides/os.02.de.pdf) 
 * 🇩🇪 [CPU-Scheduling](slides/os.03.de.pdf) 
+* 🇩🇪 [Multi-Level Feedback Queue](slides/os.04.de.pdf) 
 
 ## Lab and Home Assignments 
 
