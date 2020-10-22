@@ -114,8 +114,8 @@ Bei Scheduling-Entscheidung wählt der Scheduler den Prozess mit der geringsten 
 
 # CFS - Beispiel
 
-* Vier Jobs (A,B,C,D), wobei C, D und E kurz nach A eintreffen
-* Nach der ersten Zeitscheibe wird einer der Jobs aus (B,C,D) gewählt da hier vruntime < vruntime
+* Vier Jobs (A,B,C,D), wobei B, C und D kurz nach A eintreffen
+* Nach der ersten Zeitscheibe wird einer der Jobs aus (B,C,D) gewählt da hier vruntime von B, C und D < vruntime von A
 * Nach *t = 100* sind C und D fertig, danach wird die vruntime zwischen A und B aufgeteilt 
 
 ![w:480 center](../img/os.05.cfs.png)
@@ -171,7 +171,7 @@ $$
 # CFS Prozesslisten
 
 * Problem: Bei mehreren hundert oder gar 1.000 Prozessen, wie wird der nächste Prozess gefunden?
-* Kurzes Gedankenspiel: Skalieren Listen? Hier müssten man immer aller linear durchsuchen was in einem linearen Aufwand von $𝑂(𝑛)$ resultiert.  
+* Kurzes Gedankenspiel: Skalieren Listen? Hier müssten man immer aller linear durchsuchen, was in einem linearen Aufwand von $𝑂(𝑛)$ resultiert.  
 * Lösung: Geschickte Wahl der Datenstruktur:
     * CFS speichert Prozesse in Rot-Schwarz-Bäumen (ausgeglichener Baum)
     * Algorithmen auf Rot-Schwarz-Bäumen sind logarithmisch mit einem Aufwand von $𝑂(l𝑜𝑔_𝑛)$ 
@@ -182,11 +182,11 @@ $$
 
 # CFS und I/O
 
-* Was passiert eigentlich wenn ein Prozess A permanent läuft , weil B aufgrund einer I/O-Operation blockiert (z.B. 10s)?
+* Was passiert eigentlich wenn ein Prozess A permanent läuft, weil B aufgrund einer I/O-Operation blockiert (z.B. 10s)?
 * B wacht auf und hat die niedrigste vruntime (10s kleiner als bei A)
 * B würde nun die CPU für 10s monopolisieren, »Starvation« von A wäre potentiell möglich
 
-* Lösung: CFS setzt die vruntime zurück
+* Lösung: CFS setzt die *vruntime* zurück
     * Sobald ein Job aufwacht, erhält er den Minimum Wert im Baum (Liste aller laufende Jobs)
     * »Starvation« wird vermieden
     * Nachteil: Jobs, die nur kurz schlafen, bekommen hierdurch keinen fairen Anteil   
@@ -196,7 +196,7 @@ $$
 # Abschluss
 
 * Am Beispiel des CFS sieht man, dass die Wahl einer geeigneten Datenstruktur eine signifikante Auswirkung auf ein System haben kann 
-* Deswegen macht es durchaus Sinn, sich mit dem Thema *Algorithmen und Datenstrukturen* in SEB3 auseinanderzusetzen. 
+* Deswegen macht es durchaus Sinn, sich mit dem Thema *Algorithmen und Datenstrukturen* in SEB3 auseinanderzusetzen
 
 
 ---
