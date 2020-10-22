@@ -65,7 +65,7 @@ $$
 𝑇_{𝑡𝑢𝑟𝑛𝑎𝑟𝑜𝑢𝑑}=𝑇_{𝑐𝑜𝑚𝑝𝑙𝑒𝑡𝑖𝑜𝑛}−𝑇_{𝑎𝑟𝑟𝑖𝑣𝑎𝑙}
 $$
 
-Afgrund unserer vorherigen Annahmen gelten
+Aufgrund unserer vorherigen Annahmen gelten
 * Alle Jobs kommen zum  gleichen Zeitpunkt an: $T_{turnaround} = 0$
 * Somit gilt: $T_{turnaround}=T_{completion}$
 
@@ -113,7 +113,7 @@ First in, First out (abk. FIFO) oder manchmal auch First Come, First Serve (abk.
 * Beschreibt die Policy recht treffend 
     * Führt den kürzesten Job aus, dann den zweit kürzesten etc.
 * Beispiel von zuvor
-    * SJF reduziert Turnaround Zeit von 110 auf 50 
+    * SJF reduziert Turnaround-Zeit von 110 auf 50 
 * $\frac{10+20+120}{3}=50$
 
 ![w:320 center](../img/os.03.sjf.png)
@@ -173,7 +173,7 @@ First in, First out (abk. FIFO) oder manchmal auch First Come, First Serve (abk.
 * $\frac{0 + 5 + 10}{3}=5$
 
 $$
-T_{response}=T_{furstrun}-T_{arrival}
+T_{response}=T_{firstrun}-T_{arrival}
 $$
 
 ![w:320 center](../img/os.03.sjf_responsetime.png)
@@ -216,7 +216,7 @@ $$
 # Input/Output
 
 * Lösen wir die nächste Restriktion: Ab sofort können Jobs auch I/O-Operationen aufrufen
-* Scheduler muss nun entscheiden wann eine I/O-Operation durchgeführt wird, da in der Zeit der laufende Prozess die CPU nicht nutzen kann und sich somit im Stauts »blocked« befindet
+* Scheduler muss nun entscheiden wann eine I/O-Operation durchgeführt wird, da in der Zeit der laufende Prozess die CPU nicht nutzen kann und sich somit im Status »blocked« befindet
 * Scheduler kann demnach in dieser Zeit einen anderen Job laufen lassen
 * Ist die I/O-Operation fertig (wird über Interrupt angezeigt), wird der zuvor geblockte Job wieder auf »ready« gesetzt
 * Ab jetzt kann er Job potentiell wieder laufen
@@ -253,5 +253,5 @@ Lösungsidee: sog. »Multi-Level Feedback Queue«-Ansätze verwenden die nahe Ve
 # Bildnachweise
 
 [1] Photo by Paul Townsend, licensed under Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0)
-[2]		Bild von Gerd Altmann auf Pixabay 
+[2]	Bild von Gerd Altmann auf Pixabay 
 

@@ -34,7 +34,7 @@ v1.0.0
 
 * Beispiel: Lottery Scheduling
 * Grundidee: Es werden Tickets vergeben, die wie in einer Lotterie gezogen werden
-* Prozesse, die öfters laufen sollen, erhalten schlict mehr Lotterielose… 
+* Prozesse, die öfters laufen sollen, erhalten schlicht mehr Lotterielose… 
 
 Einfach, oder? 🤔
 

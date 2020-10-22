@@ -1,7 +1,7 @@
 ---
 
 marp: true
-theme: defalut
+theme: default
 paginate: true
 footer: 
 
@@ -133,7 +133,7 @@ Spannende Frage: Wie lange sollte die Zeitspanne *s* sein?
 * Der Wert *s* heißt nach John Ousterhout »Voodoo Constant«.
 * Für die Bestimmung sog. Voodoo-Konstanten benötigt das System etwas »schwarze Magie« zu deren Bestimmung
 * Dilemma: Wenn *s* zu groß gewählt wird, können CPU-intensive Jobs doch verhungern, ist sie zu klein gewählt bekommen interaktive Jobs nicht genügend CPU  
-* Genrell sollten Voodoo-Konstanten vermieden werden (Ousterhout's Law)
+* Generell sollten Voodoo-Konstanten vermieden werden (Ousterhout's Law)
 
 ---
 
