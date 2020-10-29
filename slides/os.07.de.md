@@ -43,7 +43,7 @@ void func() {
 
 ---
 
-# Speicherartenb: Heap
+# Speicherarten: Heap
 
 * Speicher muss explizit durch Entwickler alloziert werden
 * Hinweis: Compiler reserviert Speicher für Pointer, z.B.  `int *x`, auf dem Stack
@@ -157,8 +157,8 @@ strcpy (dst, scr);
 ## Speicher mehrfach freigeben
 
 * Man sollte denken, das sollte kein Unterschied machen
-* Ergebnis ist aallerdings nicht exakt definiert
-*Ü Nennt sich »Double Free«
+* Ergebnis ist allerdings nicht exakt definiert
+* Nennt sich »Double Free«
 * Immer wieder gut, um die zugrundeliegenden Bibliotheken zur Speicherverwaltung maximal zu verwirren 😵
 
 ---
