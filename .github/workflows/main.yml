@@ -1,5 +1,5 @@
 # Created: 2020/10/14 19:00:21
-# Last modified: 2020/10/30 23:47:48
+# Last modified: 2020/10/31 00:00:31
 
 name: Publish
 
@@ -18,13 +18,20 @@ jobs:
         with:
           ref: main # based on https://github.com/actions/checkout/issues/136
 
-      - name: Changed Files Exporter
+#      - name: Changed Files Exporter
+#        id: changed-files
+#        uses: futuratrepadeira/changed-files@v3.3.0
+#        with:
+#          repo-token: '${{ secrets.GITHUB_TOKEN }}'          
+#          pattern: '^.*\.(md|markdown)$'
+#          result-encoding: 'string'
+
+
+      - name: Get changed files
         id: changed-files
-        uses: futuratrepadeira/changed-files@v3.3.0
+        uses: lots0logs/gh-action-get-changed-files@2.1.4
         with:
-          repo-token: '${{ secrets.GITHUB_TOKEN }}'          
-          pattern: '^.*\.(md|markdown)$'
-          result-encoding: 'string'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run marp-action setup
         id: marp-action
