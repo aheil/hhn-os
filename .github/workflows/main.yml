@@ -1,5 +1,5 @@
 # Created: 2020/10/14 19:00:21
-# Last modified: 2020/10/30 23:37:20
+# Last modified: 2020/10/30 23:47:48
 
 name: Publish
 
@@ -22,7 +22,7 @@ jobs:
         id: changed-files
         uses: futuratrepadeira/changed-files@v3.3.0
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'          
           pattern: '^.*\.(md|markdown)$'
           result-encoding: 'string'
 
@@ -31,4 +31,4 @@ jobs:
         uses: aheil/marp-action@v1.1.0-beta
         with:
           src-dir: 'slides'
-          src-files: ${{ steps.changed-files.outputs.files_updated }}
+          src-files: '${{ steps.changed-files.outputs.files_updated }}'
