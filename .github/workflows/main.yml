@@ -1,5 +1,5 @@
 # Created: 2020/10/14 19:00:21
-# Last modified: 2020/10/30 23:27:43
+# Last modified: 2020/10/30 23:32:06
 
 name: Publish
 
@@ -20,7 +20,7 @@ jobs:
         id: changed-files
         uses: futuratrepadeira/changed-files@v3.3.0
         with:
-          repo-token: ${{ github.token }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           pattern: '^.*\.(md|markdown)$'
           result-encoding: 'string'
 
