@@ -1,5 +1,5 @@
 # Created: 2020/10/14 19:00:21
-# Last modified: 2020/10/30 23:20:59
+# Last modified: 2020/10/30 23:27:43
 
 name: Publish
 
@@ -30,5 +30,3 @@ jobs:
         with:
           src-dir: 'slides'
           src-files: ${{ steps.changed-files.outputs.files_updated }}
-
-          https://stackoverflow.com/questions/59175332/using-output-from-a-previous-job-in-a-new-one-in-a-github-action/61236803#61236803
