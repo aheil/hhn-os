@@ -2,7 +2,7 @@
 
 # Operating Systems
 
-This course is being taught as a part of the Bachelor Software Engineering at Heilbronn University fpr Applied Sciences in Germany. 
+This course is being taught as a part of the Bachelor Software Engineering at Heilbronn University for Applied Sciences in Germany. 
 
 [Go to the official Website ⏭](https://www.hs-heilbronn.de/os)
 
