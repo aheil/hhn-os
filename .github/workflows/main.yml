@@ -1,5 +1,5 @@
 # Created: 2020/10/14 19:00:21
-# Last modified: 2020/10/31 00:00:31
+# Last modified: 2020/11/05 22:24:51
 
 name: Publish
 
@@ -35,7 +35,7 @@ jobs:
 
       - name: Run marp-action setup
         id: marp-action
-        uses: aheil/marp-action@v1.1.0-beta
+        uses: aheil/marp-action@v1.0.0
         with:
           src-dir: 'slides'
           src-files: '${{ steps.changed-files.outputs.files_updated }}'
