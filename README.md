@@ -17,6 +17,10 @@ This course is being taught as a part of the Bachelor Software Engineering at He
 * 🇩🇪 [Memory API](slides/os.07.de.pdf) 
 * 🇩🇪 [Address Translation](slides/os.08.de.pdf) 
 * 🇩🇪 [Exkurs: Von-Neumann vs Harvard](slides/os.09.de.pdf) 
+* 🇩🇪 [Segmentierung und Fragmentierung](slides/os.10.de.pdf)
+* 🇩🇪 [Free-Space Management](slides/os.11.de.pdf) 
+
+
 
 ## Lab and Home Assignments 
 
