@@ -1,3 +1,4 @@
 hhn-os.code-workspace
-img/*.pptx
 .vscode/*.*
+img/*.pptx
+src/*.out
