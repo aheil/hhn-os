@@ -18,15 +18,17 @@ Prof. Dr.-Ing. Andreas Heil
 
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
-v1.0.0
+<!--version-->
+v1.0.1
+<!--/version-->
 
 ---
 
 # Policies - Motivation
 
   * Solange es genügend Speicher gibt\, ist Speichermanagement kein Problem
-  * Sobald es „eng wird“ \(engl\.memorypressure\) sieht die Sache ganz anders aus
-  * Welche Seiten ausgelagert werden\, wird durch einen Cache\-Algorithmus \(engl\.replacementpolicy\) geregelt
+  * Sobald es „eng wird“ \(engl\.memory pressure\) sieht die Sache ganz anders aus
+  * Welche Seiten ausgelagert werden\, wird durch einen Cache\-Algorithmus \(engl\.replacement policy\) geregelt
   * Im Folgenden werden wir uns daher der Fragestellung widmen\, wie entschieden werden kann\, welche Seiten am „geschicktesten“ ausgelagert werden können\.
 
 
@@ -44,7 +46,7 @@ v1.0.0
 
 # Durchschnittliche Zugriffszeit
 
-* Sind die Zugriffszeiten auf Speicher und Platte bekannt lässt sich die sog\. Average Memory Access Time \(Abk\. AMAT\) berechnen:
+* Sind die Zugriffszeiten auf Speicher und Platte bekannt lässt sich die sog\. Average Memory Access Time (Abk. AMAT) berechnen:
   * Zugriffszeit auf Hauptspeicher
   * Wahrscheinlichkeit eine Seite nicht im Cache zu finden \[0\,0\.\.1\,0\]
   * Zugriffszeit auf Platte/Disk
@@ -80,7 +82,7 @@ Verfügbarer Speicher
 # FIFO: Beispiel
 
   * Verglichen mit dem optimalen Algorithmus schlecht
-  * 36\,4% bzw\. 57\,1% \(ohne ersten Miss\) Hit Rate
+  * 36,4% bzw. 57,1% (ohne ersten Miss) Hit Rate
   * Problem: FIFO hat keine Kenntnis über Relevanz einer Seite
   * Hier: Obwohl Seite 0 oft genutzt wird\, wird Sie durch FIFO irgendwann rausgeworfen\, nur weil es die erste Seite war\, die geladen war
 
@@ -98,7 +100,7 @@ Bildquelle: OSTEP
 
 # Policy: Random
 
-* Zufallsstrategie \(engl\.random\)
+* Zufallsstrategie (engl. random)
   * Zu ersetzende Seiten werden zufällig ausgewählt
   * Hit Rates sind Glücksache
   * Im vorliegenden Beispiel besser als FIFO\, schlechter als der optimale Algorithmus

@@ -19,7 +19,7 @@ Prof. Dr.-Ing. Andreas Heil
 
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
-v1.0.0
+v1.0.1
 
 ---
 
@@ -149,7 +149,7 @@ intsome\_function\(char\*input\) \{chardest\_buffer\[100\];strcpy\(dest\_buffer\
 # Meltdown & Specter
 
 * ASLT wird auch für den Kernel eingesetzt\, dieser habt damit aber ein paar Probleme
-  * Moderne CPUs führen eine sog\.Speculative Excecution aus\, „raten“ also welche Instruktion als nächste ausgeführt werden könnte\, und machen das auch schon mal
+  * Moderne CPUs führen eine sog\.Speculative Execution aus\, „raten“ also welche Instruktion als nächste ausgeführt werden könnte\, und machen das auch schon mal
   * Falls richtig geraten\, wird das Programm schneller\, wenn nicht\, wird es nicht langsamer
   * Speculativ Execution hinterlässt allerdings Spuren \(Prozessor Caches\, Verzweigungen\, Sprungadressen etc\.\)
   * Hierdurch kann sogar auch Speicherbereiche zugegriffen werden\, die eigentlich durch die MMU geschützt sind
