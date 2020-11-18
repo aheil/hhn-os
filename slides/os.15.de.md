@@ -84,6 +84,8 @@ Verfügbarer Speicher
   * Problem: FIFO hat keine Kenntnis über Relevanz einer Seite
   * Hier: Obwohl Seite 0 oft genutzt wird\, wird Sie durch FIFO irgendwann rausgeworfen\, nur weil es die erste Seite war\, die geladen war
 
+![center w:900](../img/os.15.fifo.de.png)
+
 ---
 
 # FIFO: Beispiel

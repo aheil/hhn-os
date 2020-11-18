@@ -48,6 +48,8 @@ das bisher Gelernte anhand eines Beispiels **widerholen**.
   * Mechanismus, um Speicher seitenweise zu speichern und zu laden
   * Swap Space ist maßgeblich für die Anzahl an Pages, die in einem System gleichzeitig verwendet werden können
 
+![center w:600](../img/os.14.swapspace.de.png)
+
 ---
 
 # Wiederholung TLB
