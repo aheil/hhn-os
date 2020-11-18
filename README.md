@@ -20,7 +20,10 @@ This course is being taught as a part of the Bachelor Software Engineering at He
 * 🇩🇪 [Segmentierung und Fragmentierung](slides/os.10.de.pdf)
 * 🇩🇪 [Free-Space Management](slides/os.11.de.pdf) 
 * 🇩🇪 [Paging](slides/os.12.de.pdf) 
-
+* 🇩🇪 [Translation Lookaside Buffer](slides/os.13.de.pdf) 
+* 🇩🇪 [Swapping](slides/os.14.de.pdf) 
+* 🇩🇪 [Swapping Policies](slides/os.15.de.pdf) 
+* 🇩🇪 [Linux Virtual Memory System](slides/os.16.de.pdf) 
 
 ## Lab and Home Assignments 
 
