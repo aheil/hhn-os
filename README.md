@@ -23,7 +23,17 @@ This course is being taught as a part of the Bachelor Software Engineering at He
 * 🇩🇪 [Translation Lookaside Buffer](slides/os.13.de.pdf) 
 * 🇩🇪 [Swapping](slides/os.14.de.pdf) 
 * 🇩🇪 [Swapping Policies](slides/os.15.de.pdf) 
-* 🇩🇪 [Linux Virtual Memory System](slides/os.16.de.pdf) 
+* 🇩🇪 [Linux Virtual Memory System](slides/os.16.de.pdf)
+* 🇩🇪 [Threads](slides/os.17.de.pdf) 
+* 🇩🇪 [Thread API & Locks](slides/os.18.de.pdf) 
+* 🇩🇪 [Locked Data Structures](slides/os.19.de.pdf) 
+* 🇩🇪 [Semaphoren](slides/os.20.de.pdf) 
+* 🇩🇪 [Nebenläufigkeit](slides/os.21.de.pdf) 
+* 🇩🇪 [I/O Devices](slides/os.22.de.pdf) 
+
+
+
+
 
 ## Lab and Home Assignments 
 
