@@ -19,7 +19,7 @@ Prof. Dr.-Ing. Andreas Heil
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
 <!--version-->
-v1.0.1
+v1.0.2
 <!--/version-->
 
 ---
@@ -125,5 +125,7 @@ Verständigung zwischen Threads
 int pthread_cond_wait(pthread_cond_t *cond, pthread_mutex_t *mutex);
 int pthread_cond_signal(pthread_cond_t *cond);
 ```
+
+---
 
 # Referenzen
