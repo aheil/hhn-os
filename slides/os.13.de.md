@@ -18,11 +18,13 @@ Prof. Dr.-Ing. Andreas Heil
 
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
-v1.0.0
+v1.0.1
 
 ---
 
 # Lernziele und Kompetenzen
+
+**Verstehen** wie I/O Devices grundsätzlich aufgebaut sind und wie sich diese in das Betriebssystem integrieren.
 
 ---
 
@@ -45,7 +47,7 @@ v1.0.0
 * Bei jedem Speicherzugriff wird zuerst der TLB geprüft, ob das Mapping dort zwischengespeichert ist 
 
 ---
-# Basisaligorithmus - Pseudocode
+# Basisalgorithmus - Pseudocode
 
 ```
 Ermittle Virtual Page Number (VPN) aus virtueller Adresse
@@ -76,7 +78,7 @@ Sonst {                                         //VPN nicht in TLB enthalten
 # TLB Misses - Wer ist dafür zuständig? 
 
 * TLB Miss: Das Mapping liegt nicht im Cache
-*  Frühere Rechnerarchitekturen (complex-instruction set computers, abk. CISC) mussten wissen wo sich die Page Table befand und wie diese aussieht
+*  Frühere Rechnerarchitekturen (complex-instruction set computers, Abk. CISC) mussten wissen wo sich die Page Table befand und wie diese aussieht
 * Bei einem Miss hat die Hardware nach dem korrekten Eintrag gesucht und den TLB aktualisiert 
 * Moderne Systeme (reduced-instruction set computers, abk. RISC) werfen eine Exception und ein Trap Handler startet im privilegierten Modus, der im Betriebssystem ausgeführt wird
 * Nachdem mit privilegierten Operationen der TLB aktualisiert wurde, kehrt das Betriebssystem aus der Trap zurück
@@ -90,7 +92,7 @@ Sonst {                                         //VPN nicht in TLB enthalten
 
 ---
 
-# Exkurs - Aber, der x86 iost doch CISC!?
+# Exkurs - Aber, der x86 ist doch CISC!?
 
 * Eine der älteren CISC-Rechnerarchietekturen ist übrigens die x86-Architektur 
 * Tatsächlich ist heute die x86-Architektur die einzige nennenswerte Architektur, die noch einen CISC-Ansatz verfolgt
@@ -170,7 +172,6 @@ Was geschieht wenn Prozess 2 auf VPN 10 zugreifen will?
   * Grundlegende Idee: Einträge, die schon lange nicht mehr angefasst werden, werden mit hoher Wahrscheinlichkeit demnächst auch nicht benötigt 
   * Das verhält sich so ähnliche wie mit den Sachen in Kisten bei Ihnen im Keller…  
 * Es gibt allerdings noch mehr Ansätze, bis hin zu einer reinen Zufallsauswahl
-
 
 ---
 
