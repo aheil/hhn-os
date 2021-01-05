@@ -52,7 +52,7 @@ Geräte zur Eingabe/Ausgaben \(engl\.input/output devices, kurz I/O devices\)  h
 * Was sind die grundlegenden Mechanismen?
 * Wie können I/O-Operationen effizient gehandhabt werden?
 
-![bg right w:640](../img/os.20.io.de.png)
+![bg right w:640](../img/os.22.io.de.png)
 
 ---
 
@@ -80,7 +80,7 @@ Geräte zur Eingabe/Ausgaben \(engl\.input/output devices, kurz I/O devices\)  h
 
 # Einsatz von I/O Chips
 
-![center h:600](../img/os.20.bus.de.png/)
+![center h:600](../img/os.22.bus.de.png/)
 
 ---
 
@@ -94,7 +94,7 @@ Geräte zur Eingabe/Ausgaben \(engl\.input/output devices, kurz I/O devices\)  h
     * Ein paar Chips\, komplexere Geräte sogar mit einer CPU
     * Allgemeiner Speicher und weitere Chips
 
-![center h:200 ](../img/os.20.canonical_device.de.png)
+![center h:200 ](../img/os.22.canonical_device.de.png)
 
 ---
 
@@ -138,7 +138,7 @@ while \(STATUS == BUSY\) ;
 
 # PIO
 
-  * Sobald die CPU \(hier meinen wir die CPU vom Rechner\, nicht vom I/O Gerät\) für das Hin\- und Herschippern der Daten genutzt wird, sprechen wir von __programmed__  __I/O \(Abk\. PIO\)__
+  * Sobald die CPU \(hier meinen wir die CPU vom Rechner\, nicht vom I/O Gerät\) für das "Hin\- und Herschippern" der Daten genutzt wird, sprechen wir von __programmed__  __I/O \(Abk\. PIO\)__
   * Das Protokoll funktioniert im Grunde ABER
   * Polling ist kostenintensiv
     * Verschwendet CPU Cycles
@@ -155,7 +155,7 @@ while \(STATUS == BUSY\) ;
   * Der aufrufende Prozess wird schlafen geschickt
   * Betriebssystem führt einen Kontext\-Switch zu einem anderen Prozess aus
   * Sobald das Gerät fertig ist\, wird ein Hardware Interrupt ausgelöst
-  * Der Interrupt veranlasst das Betriebssystem eine vordefinierten __Interrupt Service Routine__ \(ISR\) bzw\. __Interrupt Handler__ auszuführen\.
+  * Der Interrupt veranlasst das Betriebssystem eine vordefinierten __Interrupt Service Routine__ \(ISR\) bzw. __Interrupt Handler__ auszuführen\.
 
 ---
 
@@ -165,7 +165,7 @@ In dem erste Beispiel pollt die CPU\, bis das Gerät fertig ist.
 
 Mit einem Interrupt könnte die CPU in der Zwischenzeit etwas anders \(sinnvolles\) machen.
 
-![center h:320](../img/os.20.polling.de.png)
+![center h:320](../img/os.22.polling.de.png)
 
 ---
 
@@ -183,7 +183,7 @@ Zu viele Interrupts können das System auch überlasten
 
 In diesem Fall sprechen wir von einem __Livelock__
 
-![center](../img/os.20.livelock.de.png)
+![center](../img/os.22.livelock.de.png)
 
 
 ---
@@ -202,8 +202,8 @@ Ein konkretes Beispiel:Ein Web\-Server erhält plötzlich \(extrem\) viele Anfra
 # Alternativer Lösungsansatz: Coalesing
 
 * Wenn ein Gerät fertig ist\, wird der Interrupt nicht sofort ausgelöst\!
-  * Anstelle dessen wartet das Gerät einen Moment ob bzw\. bis weiter Anfragen abgearbeitet sind
-  * Nun werden alle bearbeitetRequestsgebündelt zurück geliefert in dem der Interrupt nur einmal ausgelöst wird
+  * Anstelle dessen wartet das Gerät einen Moment ob bzw. bis weiter Anfragen abgearbeitet sind
+  * Nun werden alle bearbeitet Requests gebündelt zurück geliefert, in dem der Interrupt nur einmal ausgelöst wird
 * Nachteil
   * Zu langes Warten kann zu einer erhöhten Latenz des Gerätes führen
 
@@ -211,11 +211,11 @@ Ein konkretes Beispiel:Ein Web\-Server erhält plötzlich \(extrem\) viele Anfra
 
 # Datenschubsen
 
-Nicht nur das Polling auch bei anderen Aufgaben wird die CPU für eigentlich triviale Aufgaben in Anspruch genommen: z\.B\. das Kopieren von Daten in die Daten Register
+Nicht nur das Polling auch bei anderen Aufgaben wird die CPU für eigentlich triviale Aufgaben in Anspruch genommen: z.B. das Kopieren von Daten in die Daten Register
 
 Frage: Wie kann der CPU Arbeit abgenommen werden\, damit die CPU effizienter genutzt werden kann? Ganz einfach: Kopieren der Daten
 
-![center h:200](../img/os.20.copy.de.png)
+![center h:200](../img/os.22.copy.de.png)
 
 ---
 
@@ -227,7 +227,7 @@ Frage: Wie kann der CPU Arbeit abgenommen werden\, damit die CPU effizienter gen
     * Wie viele Daten kopiert werden sollen
     * An welches Gerät die Daten geschickt werden sollen und ist jetzt quasi fertig!
 
-![center h:200](../img/os.20.dma.de.png)
+![center h:200](../img/os.22.dma.de.png)
 
 ---
 
@@ -239,7 +239,7 @@ Ziel: Betriebssystem so gut wie es geht Geräte\-neutral halten\, also die Detai
 
 Lösung: Wie so oft in der Informatik hilft uns hier die __Abstraktion__ \!
 
-![center h:200](../img/os.20.abstraction.de.png)
+![center h:200](../img/os.22.abstraction.de.png)
 
 ---
 
