@@ -20,7 +20,7 @@ Prof. Dr.-Ing. Andreas Heil
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
 <!--version-->
-v1.0.0
+v1.0.1
 <!--/version-->
 
 ---
@@ -50,7 +50,7 @@ Der Aufbau ist im Grundprinzip immer ähnlich
 * Das Laufwerk besteht aus einer Anzahl von Sektoren
   (i.d.R. in Form von 512-Byte Blöcken)
 * Jeder Block kann individuell gelesen und geschrieben werden
-* Alle Sektoren sind nummeriert 0 bis 𝑛−1 (bei 𝑛 Sektoren) 
+* Alle Sektoren sind nummeriert 0 bis $n−1$ (bei $n$ Sektoren) 
 * Multi-Sektor-Operationen sing möglich (und gängig)
 * Viele Dateisysteme lesen 4KB oder mehr auf einmal 
 * Atomare Schreiboperationen sind nur auf 512-Byte Blöcke zugesichert 
@@ -105,9 +105,9 @@ Nur die ersten drei Blöcke wurden geschrieben\, obwohl der Stromausfall erst se
 # Rotational Delay
 
 * Rotational Delay oder auch Rotational Latency – Zeit bis sich der gesuchte Sektor unter dem Schreib-Lese-Kopf befindet 
-* Eine vollständige Umdrehung dauert 𝑅 
-* Suchen wir Sektor 0 und starten bei Sektor 6, ist das Delay 𝑅/2
-* Der Worst-Case wäre im Beispiel zuvor ein Start bei 5, hier wird fast eine ganze Rotation benötigt und das Delay beträgt somit fast 𝑅
+* Eine vollständige Umdrehung dauert $R$ 
+* Suchen wir Sektor 0 und starten bei Sektor 6, ist das Delay $R/2$
+* Der Worst-Case wäre im Beispiel zuvor ein Start bei 5, hier wird fast eine ganze Rotation benötigt und das Delay beträgt somit fast $R$
 
 ---
 
