@@ -30,7 +30,8 @@ This course is being taught as a part of the Bachelor Software Engineering at He
 * 🇩🇪 [Semaphoren](slides/os.20.de.pdf) 
 * 🇩🇪 [Nebenläufigkeit](slides/os.21.de.pdf) 
 * 🇩🇪 [I/O Devices](slides/os.22.de.pdf) 
-
+* 🇩🇪 [Hard Disk Drives](slides/os.23.de.pdf) 
+* 🇩🇪 [RAID-Systeme](slides/os.24.de.pdf) 
 
 
 

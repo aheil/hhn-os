@@ -2,3 +2,4 @@ hhn-os.code-workspace
 .vscode/*.*
 src/*.out
 img/~*
+tmp/
