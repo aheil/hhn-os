@@ -20,7 +20,7 @@ Prof. Dr.-Ing. Andreas Heil
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
 <!--version-->
-v1.0.1
+v1.0.2
 <!--/version-->
 
 ---
@@ -113,10 +113,10 @@ Nur die ersten drei Blöcke wurden geschrieben\, obwohl der Stromausfall erst se
 
 # Seek Time (1)
 
-* In Wirklichkeit besitzen HDDs **sehr viele** Tracks und der Schrei\-Lese\-Kopf muss permanent ausgerichtet werden
+* In Wirklichkeit besitzen HDDs **sehr viele** Tracks und der Schreib\-Lese\-Kopf muss permanent ausgerichtet werden
   * Hier: Kopf über dem innersten Track muss zum äußersten bewegt werden \(engl\.seek\):
   * Rotation undSeeksind mit die teuersten Operationen einer Festplatte
-  * Seekingbesteh aus vier Phasen:
+  * Seeking besteht aus vier Phasen:
     * Beschleunigung \(engl\.accelaration\)
     * Schub bei voller Geschwindigkeit \(engl\.coasting\)
     * Abbremsung \(engl\.deceleration\)
@@ -134,9 +134,9 @@ Nur die ersten drei Blöcke wurden geschrieben\, obwohl der Stromausfall erst se
 
 Erst wenn der Kopf korrekt positioniert ist \(stellen Sie sich vor\, er wäre nur ungefähr auf dem richtigen Track🤦‍♂️\) findet der Transfer \(engl\.transfer\) statt\.
 
-Um dass sequentielle Lesen zu ermöglichen bieten\, nutzen manche Disks ein sog\. Spurversatz \(engl\. trackskew\) an\, damit keine Latenz nach dem Neupositionieren entsteht\, wenn die Daten auf einem anderen Sektor weitergeführt werden\.
+Um dass sequentielle Lesen zu ermöglichen, nutzen manche Disks ein sog\. Spurversatz \(engl\. trackskew\) an\, damit keine Latenz nach dem Neupositionieren entsteht\, wenn die Daten auf einem anderen Sektor weitergeführt werden\.
 
-Außen befinden sich mehr Sektoren \(Physik rulez\!\)\, daher werden Platten oft in Zonen eingeteilt wobei eine Zone fortlaufende \(engl\. multi\-zoneddisks\)\. Äußere Zonen besitzen dann mehr Sektoren als innere\.
+Außen befinden sich mehr Sektoren \(Physik rulez\!\)\, daher werden Platten oft in Zonen \(engl\. multi\-zoned disks\)\. Äußere Zonen besitzen dann mehr Sektoren als innere\.
 
 Schreib\-/Lesecache zur Performance\-Steigerung\. Beim Schreiben kann sofort nach dem Cachen bestätigt werden \(engl\.writeback\) oder erst nach dem Schreiben auf Platte \(engl\.writethrough\).
 
@@ -193,7 +193,7 @@ $$ R_{I/O} = {\frac{Size_{transfer}}{T_{I/O}}} $$
 
   * Ausgangspunkt s\. Abbildung
   * Sollte nun Track 8 oder 16 zuerst gewählt werden?
-  * Abhängig vonSeek\-Zeit und Rotation\-Delay
+  * Abhängig von Seek\-Zeit und Rotation\-Delay
   * Löst eigentlich unsere vorherigen Probleme
   * Problem: Das Betriebssystem kennt meist nicht die Track\-Grenzen nicht und weiß nicht wo sich der Schreib\-Lese\-Kopf gerade befindet
   * Daher wird SPFT meist innerhalb des Drives selbst implementiert
@@ -207,7 +207,7 @@ Dreht sich in diese Richtung
   * Früher wurde das gesamte Scheduling im Betriebssystem realisiert – früher waren die Disks „einfacher“ gebaut\.
   * Heute besitzen Festplatten einen komplexen Scheduler auf dem Disk Controller\, der exakte Daten über die internen Positionen hat\.
   * Das Betriebssystem schickt die Requests an die Disk\, die es am geeignetsten hält und die Disk kümmert sich um den Rest\.
-  * I/OMerging:Requests\, die nahe aneinander liegende Sektoren betreffen\, sollten möglichst zusammengefasst werden\, da dies den Overhead für das Betriebssystem reduziert\.
+  * I/O Merging:Requests\, die nahe aneinander liegende Sektoren betreffen\, sollten möglichst zusammengefasst werden\, da dies den Overhead für das Betriebssystem reduziert\.
   * Wie lange soll der Scheduler warten\, bis eine I/O\-Anfrage abgearbeitet wird? Es könnte ja noch eine „bessere“ Anfrage kommen\, so dass die Disk effizienter genutzt werden kann\.
 
 ---
