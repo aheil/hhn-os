@@ -18,7 +18,7 @@ Prof. Dr.-Ing. Andreas Heil
 
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
-v1.1.0
+v1.1.1
 
 ---
 
@@ -109,15 +109,19 @@ First in, First out (abk. FIFO) oder manchmal auch First Come, First Serve (abk.
 
 ---
 
+<!-- footer: Photo by Paul Townsend, licensed under Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0)-->
+
 # Convoy Effect (dt. Konvoieffekt)
 
 * Kennt jeder
 * Mehrere Kunden mit wenigen Waren warten hinter einem einzigen Kunden mit vielen Waren 
-* Nur eine Supermarktkasse offen, der Kunde vor Ihnen hat zwei Einkaufswägen voll und zählt bereits das Kleingeld... 😤
+* Nur eine Supermarktkasse offen... 😤
 
-![bg right](../img/os.03.convoy.jpg)[1]
+![bg right h:550](../img/os.03.convoy.jpg)
 
 ---
+
+<!-- footer: "" -->
 
 # Shortest Job First
 
@@ -169,15 +173,19 @@ First in, First out (abk. FIFO) oder manchmal auch First Come, First Serve (abk.
 
 ---
 
+<!-- footer: Bild von Gerd Altmann auf Pixabay -->
+
 # Problem mit STCF
 
-* Benutzer sitzt vor dem Rechner und wartet bis Job A (z.B. Aktualisierung in Excel o.ä.) fertig ist
+* Benutzer wartet bis Job A (z.B. Aktualisierung in Excel o.ä.) fertig ist
 * Nun kommt die Hausaufgabe vom letzten Mal ins Spiel: Sie erinnern sich an den Unterschied zwischen Foreground- und Background-Jobs?  
 * Was ist denn, wenn andauernd neue kürzere Jobs eintreffen, die keine Benutzereingabe erfordern… 🥱
 
-![bg right w: 280](../img/os.03.wait.jpg)[2]
+![bg right w:550](../img/os.03.wait.jpg)
 
 ---
+
+<!-- footer: "" -->
 
 # Scheduler Metriken: Antwortzeit
 
@@ -260,11 +268,3 @@ Lösungsidee: sog. »Multi-Level Feedback Queue«-Ansätze verwenden die nahe Ve
 # Referenzen 
 
 [^1]: http://pages.cs.wisc.edu/~remzi/OSTEP/
-
---- 
-
-# Bildnachweise
-
-[1] Photo by Paul Townsend, licensed under Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0)
-[2]	Bild von Gerd Altmann auf Pixabay 
-
