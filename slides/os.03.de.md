@@ -18,7 +18,19 @@ Prof. Dr.-Ing. Andreas Heil
 
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
-v1.0.0
+v1.1.0
+
+---
+
+# Wiederholung
+
+* Direct Execution
+    * Weshalb ist es keine gute Idee, Prozesse direkt auszuführen? 
+* SysCalls
+    * Woher weiß die Hardware, welcher Betriebssystem-Code ausgeführt werden soll?
+    * Wie lässt sich dies als Angriffsvektor nutzen?
+* Stack
+    * Wie ist die grundlegende Funktionsweise eines Stacks?
 
 ---
 
@@ -50,23 +62,23 @@ Was fehlt noch?
     * Alle Jobs treffen zur gleichen Zeit ein
     * Einmal gestartet, läuft ein Job bis er beendet ist
     * Alle Jobs verwenden ausschließlich die CPU
-    * Laufzeit (engl. runtime) eines jeden Jobs ist bekannt1
+    * Laufzeit (engl. runtime) eines jeden Jobs ist bekannt
 
 ---
 
 # Scheduler Metriken: Turnaround-Zeit
 
 
-* Hinweis: Metriken werden im 4. Semester ins SEKS vertieft 
+* Hinweis: Metriken werden im 3. Semester in SEKS vertieft 
 * Für heute genügt: Metrik = einfach um etwas zu messen
 * Für uns: zunächst nur eine Metrik
 
 $$
-𝑇_{𝑡𝑢𝑟𝑛𝑎𝑟𝑜𝑢𝑑}=𝑇_{𝑐𝑜𝑚𝑝𝑙𝑒𝑡𝑖𝑜𝑛}−𝑇_{𝑎𝑟𝑟𝑖𝑣𝑎𝑙}
+T_{turnaround}=T_{completion}-T_{arrival}
 $$
 
 Aufgrund unserer vorherigen Annahmen gelten
-* Alle Jobs kommen zum  gleichen Zeitpunkt an: $T_{turnaround} = 0$
+* Alle Jobs kommen zum  gleichen Zeitpunkt an: $T_{arrival} = 0$
 * Somit gilt: $T_{turnaround}=T_{completion}$
 
 ---
@@ -150,7 +162,8 @@ First in, First out (abk. FIFO) oder manchmal auch First Come, First Serve (abk.
 * Lösen wir nun die Restriktion, dass alle Jobs bis zum Ende durchlaufen 
 * Jedes Mal wenn ein Job eintrifft, wird derjenige der die geringste Restlaufzeit
 * **Achtung!** Das geht nur wegen unserer letzten noch bestehenden Annahme: Die (Rest-)Laufzeit ist bekannt! 
-* $\frac{(120-0+(20-10)+(30-10)}{3}=50$
+
+* $\frac{(120-0)+(20-10)+(30-10)}{3}=50$
 
 ![w:320 center](../img/os.03.stcf.png)
 
