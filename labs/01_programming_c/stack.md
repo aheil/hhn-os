@@ -36,11 +36,13 @@ int peek();
 
     > ERROR: Stack is empty, NULL return instead
 
-    In diesem Fall liefert die Funktion pop() keinen Integer-Wert, sonden den Wert `NULL` zurück. 
+    In diesem Fall liefert die Funktion `pop()` keinen Integer-Wert, sonden den Wert `NULL` zurück. 
 
     c. Beim Versuch einen Wert mittels `peek()`vom Stack zu lesen wenn der Stack keine Einträge enthält erfolgt folgender Hinweis: 
 
-     > ERROR: Stack is empty, NULL return instead
+    > ERROR: Stack is empty, NULL return instead
+     
+    In diesem Fall liefert die Funktion `peek()`keinen INteger-Wert, sondern den WErt `NULL`zurück.
 
     d. Alle drei Fehlermeldungen werden auf [stderr](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html) ausgegeben.  
 
