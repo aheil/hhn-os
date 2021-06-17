@@ -20,7 +20,7 @@ Prof. Dr.-Ing. Andreas Heil
 ![h:32 CC 4.0](../img/cc.svg)![h:32 CC 4.0](../img/by.svg) Licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
 
 <!--version-->
-v1.0.1
+v1.0.3
 <!--/version-->
 
 ---
@@ -70,7 +70,7 @@ Nur die ersten drei Blöcke wurden geschrieben\, obwohl der Stromausfall erst se
 
 * Annahmen\, die von vielen Clients getroffen werden \(unwritten contract\):
   * Auf zwei nahe beieinander liegende Blöcke kann schneller zugegriffen werden\, als auf weit entfernt liegende
-  * Der Zugriff auf fortlaufende Böcke \(engl\. sequential read/write\) ist der schnellste Zugriff überhaupt und gewöhnlich  schneller als der wahlfreie Zugriff \(engl\. randomaccess\)
+  * Der Zugriff auf fortlaufende Böcke \(engl\. sequential read/write\) ist der schnellste Zugriff überhaupt und gewöhnlich  schneller als der wahlfreie Zugriff \(engl\. random access\)
 
   Angenommen\, Sie schreiben einen Treiber für \(konventionelle\) Festplatten unter diesen  Annahmen und morgen tauscht jemand die Festplatten gegen Solid State Disks aus…
 
@@ -82,9 +82,9 @@ Nur die ersten drei Blöcke wurden geschrieben\, obwohl der Stromausfall erst se
   * Magnetische Oberfläche aus Eisenoxid - oder Kobalt\-Deckschicht \(engl\.</span> surface\)
   * Achse bzw\. Spindle \(engl\. spindle\)
   * Schreib\-Lese\-Kopf \(engl\. disk\-head\)
-  * Arm mittels dem der Schreib\-Lese\-Kopf positioniert wird \(engl\.diskarm\)
+  * Arm mittels dem der Schreib\-Lese\-Kopf positioniert wird \(engl\. diskarm\)
   * Daten sind in konzentrischen Kreisen \(engl\.tracks\) angeordnet
-  * Umdrehung wird in RPM \(rotationsperminute\) gemessen\.
+  * Umdrehung wird in RPM \(rotations per minute\) gemessen\.
   * Typische Werte heutzutage von 7\.200 bis 15\.000 RPM
   * Interessant wird die Umdrehungszeit\, bei 10\.000 RPM sind dies ca\. 6ms
 
@@ -113,14 +113,14 @@ Nur die ersten drei Blöcke wurden geschrieben\, obwohl der Stromausfall erst se
 
 # Seek Time (1)
 
-* In Wirklichkeit besitzen HDDs **sehr viele** Tracks und der Schrei\-Lese\-Kopf muss permanent ausgerichtet werden
-  * Hier: Kopf über dem innersten Track muss zum äußersten bewegt werden \(engl\.seek\):
-  * Rotation undSeeksind mit die teuersten Operationen einer Festplatte
-  * Seekingbesteh aus vier Phasen:
-    * Beschleunigung \(engl\.accelaration\)
-    * Schub bei voller Geschwindigkeit \(engl\.coasting\)
-    * Abbremsung \(engl\.deceleration\)
-    * Einschwingzeit \(engl\.settlingtime\) mit 0\,5 bis 2ms
+* In Wirklichkeit besitzen HDDs **sehr viele** Tracks und der Schreib\-Lese\-Kopf muss permanent ausgerichtet werden
+  * Hier: Kopf über dem innersten Track muss zum äußersten bewegt werden \(engl\. seek\):
+  * Rotation und Seek sind mit die teuersten Operationen einer Festplatte
+  * Seeking besteht aus vier Phasen:
+    * Beschleunigung \(engl\. accelaration\)
+    * Schub bei voller Geschwindigkeit \(engl\. coasting\)
+    * Abbremsung \(engl\. deceleration\)
+    * Einschwingzeit \(engl\. settling time\) mit 0\,5 bis 2ms
 
 ---
 
@@ -134,9 +134,9 @@ Nur die ersten drei Blöcke wurden geschrieben\, obwohl der Stromausfall erst se
 
 Erst wenn der Kopf korrekt positioniert ist \(stellen Sie sich vor\, er wäre nur ungefähr auf dem richtigen Track🤦‍♂️\) findet der Transfer \(engl\.transfer\) statt\.
 
-Um dass sequentielle Lesen zu ermöglichen bieten\, nutzen manche Disks ein sog\. Spurversatz \(engl\. trackskew\) an\, damit keine Latenz nach dem Neupositionieren entsteht\, wenn die Daten auf einem anderen Sektor weitergeführt werden\.
+Um dass sequentielle Lesen zu ermöglichen, nutzen manche Disks ein sog\. Spurversatz \(engl\. trackskew\) an\, damit keine Latenz nach dem Neupositionieren entsteht\, wenn die Daten auf einem anderen Sektor weitergeführt werden\.
 
-Außen befinden sich mehr Sektoren \(Physik rulez\!\)\, daher werden Platten oft in Zonen eingeteilt wobei eine Zone fortlaufende \(engl\. multi\-zoneddisks\)\. Äußere Zonen besitzen dann mehr Sektoren als innere\.
+Außen befinden sich mehr Sektoren \(Physik rulez\!\)\, daher werden Platten oft in Zonen \(engl\. multi\-zoned disks\)\. Äußere Zonen besitzen dann mehr Sektoren als innere\.
 
 Schreib\-/Lesecache zur Performance\-Steigerung\. Beim Schreiben kann sofort nach dem Cachen bestätigt werden \(engl\.writeback\) oder erst nach dem Schreiben auf Platte \(engl\.writethrough\).
 
@@ -170,7 +170,7 @@ $$ R_{I/O} = {\frac{Size_{transfer}}{T_{I/O}}} $$
   * Anordnung der Jobs nach Track – die Anfrage mit dem am nächst gelegenen Track wird zuerst gewählt
   * Problem: Die Disk Geometrie ist dem Betriebssystem nicht bekannt
   * Anstelle dessen kann der nächst gelegen Block verwendet werden \(nearest\-block\-first\, Abk\. NBF\)
-  * Problem 2:Starvation– Bei einem fortlaufenden Strom von Anfragen auf z\.B\. die inneren Tracks würden Anfragen auf die äußeren ignoriert
+  * Problem 2: Starvation– Bei einem fortlaufenden Strom von Anfragen auf z\.B\. die inneren Tracks würden Anfragen auf die äußeren ignoriert
   * Wie kann dieses Problem gelöst werden?
 
 ---
@@ -178,9 +178,9 @@ $$ R_{I/O} = {\frac{Size_{transfer}}{T_{I/O}}} $$
 # Scheduling-Strategien – SCAN/C-SCAN
 
   **SCAN**
-  * Anfragen werden von den äußeren zu den inneren Tracks und wieder zurück etc\. abgearbeitet \(engl\.sweep\)
+  * Anfragen werden von den äußeren zu den inneren Tracks und wieder zurück etc\. abgearbeitet \(engl\. sweep\)
 
-**C\-SCAN \(CircularSCAN\)**
+**C\-SCAN \(Circular SCAN\)**
   * Anstelle in beiden Richtungen werden Anfragen immer von den äußeren Tracks abgearbeitet
   * Fairer gegenüber den äußeren und inneren Tracks\, da reines SCAN zweimal die mittleren Tracks trifft
   * Allerdings werden SCAN/C\-SCAN nicht annähernd einem SJF\-Ansatz gerecht
@@ -193,12 +193,10 @@ $$ R_{I/O} = {\frac{Size_{transfer}}{T_{I/O}}} $$
 
   * Ausgangspunkt s\. Abbildung
   * Sollte nun Track 8 oder 16 zuerst gewählt werden?
-  * Abhängig vonSeek\-Zeit und Rotation\-Delay
+  * Abhängig von Seek\-Zeit und Rotation\-Delay
   * Löst eigentlich unsere vorherigen Probleme
   * Problem: Das Betriebssystem kennt meist nicht die Track\-Grenzen nicht und weiß nicht wo sich der Schreib\-Lese\-Kopf gerade befindet
   * Daher wird SPFT meist innerhalb des Drives selbst implementiert
-
-Dreht sich in diese Richtung
 
 ---
 
@@ -207,7 +205,7 @@ Dreht sich in diese Richtung
   * Früher wurde das gesamte Scheduling im Betriebssystem realisiert – früher waren die Disks „einfacher“ gebaut\.
   * Heute besitzen Festplatten einen komplexen Scheduler auf dem Disk Controller\, der exakte Daten über die internen Positionen hat\.
   * Das Betriebssystem schickt die Requests an die Disk\, die es am geeignetsten hält und die Disk kümmert sich um den Rest\.
-  * I/OMerging:Requests\, die nahe aneinander liegende Sektoren betreffen\, sollten möglichst zusammengefasst werden\, da dies den Overhead für das Betriebssystem reduziert\.
+  * I/O Merging: Requests, die nahe aneinander liegende Sektoren betreffen\, sollten möglichst zusammengefasst werden\, da dies den Overhead für das Betriebssystem reduziert\.
   * Wie lange soll der Scheduler warten\, bis eine I/O\-Anfrage abgearbeitet wird? Es könnte ja noch eine „bessere“ Anfrage kommen\, so dass die Disk effizienter genutzt werden kann\.
 
 ---
