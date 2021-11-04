@@ -57,20 +57,21 @@ Die Bewertung Ihrer Abgabe findet automatisch statt. Stellen Sie hierzu folgende
 * Sie nutzen eine Header-Datei in der der obige Header hinterlegt ist. 
 * Zur Abgabe erhalten Sie einen Zugang zum hochschulinternen [GitLab](https://git.it.hs-heilbronn.de/).
 * Ihre Lösung checken Sie in Ihrem Repository ein.
+* 
 * Die eigentliche Abgabe erfolgt über das hochschuleigene [Commit-System](https://commit.it.hs-heilbronn.de/). Der Zugriff ist ausschließlich im Hochschulnetz oder über VPN möglich. 
 
 ## Bewertung
 
-Die Bewertung Ihrer Aufgabe findet anhand einer Reihe von automatisierten Tests statt. 
+* Die Bewertung Ihrer Aufgabe findet anhand einer Reihe von automatisierten Tests statt. 
+* Hierzu ist es erforderlich, dass die obigen Schritte exakt eingehalten werden. 
+* Ihr Implementierung wird einer Reihe von automatisierten Tests unterzogen, die Ihre Implementierung auf Korrektheit überprüfen. 
+* Abgaben, die nicht vollständig sind oder die Abgabekriterien nicht erfüllen werden nicht bewertet. 
+* Abgaben, die nicht fristgerecht eingereicht werden, werden nicht bewertet. 
+* Nutzen Sie zur Abgabe ausschließlich das beschriebene Verfahren. Abgaben, die per E-Mail oder anderen Wegen eingereicht werden, werden nicht bewertet. 
+* Abgaben, die aufgrund eines Fehlers nicht durch die Tests laufen, werden entsprechend mit weniger Punkten bewertet.
 
-Hierzu ist es erforderlich, dass die obigen Schritte exakt eingehalten werden. 
+## Hinweise 
 
-Ihr Implementierung wird einer Reihe von automatisierten Tests unterzogen, die Ihre Implementierung auf Korrektheit überprüfen. 
+* In der Aufgabestellung wird die Rückgabe des Wertes `Null` gefordert. *gcc* sollte beim Kompilieren eine Warnung der Form `warning: returning ’void *’ from a function with return type ‘int’ makes integer from pointer without a cast [-Wint-conversion]`
 
-Abgaben, die nicht vollständig sind oder die Abgabekriterien nicht erfüllen werden nicht bewertet. 
-
-Abgaben, die nicht fristgerecht eingereicht werden, werden nicht bewertet. 
-
-Nutzen Sie zur Abgabe ausschließlich das beschriebene Verfahren. Abgaben, die per E-Mail oder anderen Wegen eingereicht werden, werden nicht bewertet. 
-
-Abgaben, die aufgrund eines Fehlers nicht durch die Tests laufen, werden entsprechend mit weniger Punkten bewertet.
+  liefern. Starten Sie *gcc* mit der Option `-Wno-int-conversion` um diese Warnung zu deaktivieren. Weitere Informationen zu den *gcc* Warnungen erhalten Sie auf den GCC Seiten unter [Options to Request or Suppress Warnings](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html).
