@@ -14,15 +14,15 @@ Das Feld `status` kann folgende Werte besitzen:
 
 - busy: `01`
 - ready: `00`
-- error: `03`
+- error: `02`
 
 Das Feld `command` kann folgende Werte besitzen: 
 
 - idle: `00`
 - read: `01`
 - write: `02`
-- reset: `03`
-- delete: `04`
+- reset: `04`
+- delete: `08`
 
 Die Felder `status`als auch `command` sind jeweils ein Byte groß. 
 
@@ -31,7 +31,7 @@ Das Feld `data` hat eine Länge von 20 Byte.
 ## Teilaufgabe 2: Treiber Implementierung 
 
 - Wird von Extern das Command-Register auf *write* gesetzt, liest der Treiber die Daten aus dem Data-Register und schreibt diese in den internen Speicher 
-- Der interne Speicher in Ihrem Gerät soll 1.0024 Byte betrage. 
+- Der interne Speicher in Ihrem Gerät soll 1.024 Byte betragen. 
 - Die Daten werden in Ihrem Gerät fortlaufend in den internen Speicher geschrieben. Ist der Speicher voll wird der Status auf *error* gesetzt. 
 - Wird von Extern das Command-Register auf *read* gesetzt, liefert der Treiber die Daten. Die DAten werden dabei fortlaufend geschrieben. 
 - Wird zwischen Lese- und Schreibvorgang gewechselt, startet der Lese- bzw. Schreibvorgang immer am Anfang Ihrer internen Datenstruktur (also bei Adresse 0). 
