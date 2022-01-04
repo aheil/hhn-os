@@ -59,18 +59,13 @@ In der Wahl der Linux Distribution sind sie frei, alle Beispiele in der Vorlesun
 
 Die Bewertung Ihrer Abgabe findet automatisch statt. Stellen Sie hierzu folgende Punkte sicher:
 
-* Ihre Implementierung befindet sich in einer Datei mit dem Namen **stack.c**. 
-* Sie nutzen eine Header-Datei in der der obige Header hinterlegt ist. 
 * Zur Abgabe erhalten Sie einen Zugang zum hochschulinternen [GitLab](https://git.it.hs-heilbronn.de/).
 * Ihre Lösung checken Sie in Ihrem Repository ein.
 * Die eigentliche Abgabe erfolgt über das hochschuleigene [Commit-System](https://commit.it.hs-heilbronn.de/). Der Zugriff ist ausschließlich im Hochschulnetz oder über VPN möglich. 
 
 ## Bewertung
 
-* Die Bewertung Ihrer Aufgabe findet anhand einer Reihe von automatisierten Tests statt. 
-* Hierzu ist es erforderlich, dass die obigen Schritte exakt eingehalten werden. 
-* Ihr Implementierung wird einer Reihe von automatisierten Tests unterzogen, die Ihre Implementierung auf Korrektheit überprüfen. 
 * Abgaben, die nicht vollständig sind oder die Abgabekriterien nicht erfüllen werden nicht bewertet. 
 * Abgaben, die nicht fristgerecht eingereicht werden, werden nicht bewertet. 
 * Nutzen Sie zur Abgabe ausschließlich das beschriebene Verfahren. Abgaben, die per E-Mail oder anderen Wegen eingereicht werden, werden nicht bewertet. 
-* Abgaben, die aufgrund eines Fehlers nicht durch die Tests laufen, werden entsprechend mit weniger Punkten bewertet.
+* Abgaben, die aufgrund eines Fehlers nicht durch Tests laufen oder sich nicht kompilieren lassen, werden entsprechend mit weniger Punkten bewertet.
